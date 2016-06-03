@@ -4,6 +4,7 @@ $base-font-size: 75px;
   $remSize: $size / $base-font-size;
   @return $remSize * 1rem;
 }
+
 //字体根据dpr设置px,默认是dpr为2时候的
 @mixin dpr($size) {
   font-size: round($size/ 2) * 1px;
@@ -47,13 +48,36 @@ body {
   border-width: 1px 0;
   background: #666;
 }
+
 header {
   height: calculateRem(100px);
-  background: #eee;
-  color: #233;
+  background: #388ad7;
+  color: #fff;
+  div {
+    height: 100%;
+  }
+  .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 calculateRem(20px);
+    @include dpr(30);
+    a{
+      color: #fff;
+    }
+    .arrow {
+      @include dpr(34);
+    }
+    span {
+      flex: 1;
+      text-align: center;
+      margin-left: calculateRem(-34px);
+    }
+  }
+
   nav {
     float: right;
-    .nav-item{
+    .nav-item {
       float: left;
       margin-left: .5em;
     }
