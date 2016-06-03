@@ -2,6 +2,7 @@
  * Created by dg_lennon on 16/6/2.
  */
 import {LOCATION_CHANGE} from 'react-router-redux';
+//noinspection JSUnresolvedVariable
 import Immutable from 'immutable';
 const initialState = Immutable.fromJS({
   locationBeforeTransitions: null

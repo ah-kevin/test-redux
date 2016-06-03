@@ -1,4 +1,32 @@
 /* Base Application Styles */
+$base-font-size: 75px;
+@function calculateRem($size) {
+  $remSize: $size / $base-font-size;
+  @return $remSize * 1rem;
+}
+//字体根据dpr设置px,默认是dpr为2时候的
+@mixin dpr($size) {
+  font-size: round($size/ 2) * 1px;
+  [data-dpr="2"] & {
+    font-size: $size*1px;
+  }
+  // for mx3
+  [data-dpr="2.5"] & {
+    font-size: round($size * 2.5 / 2) * 1px;
+  }
+  // for 小米note
+  [data-dpr="2.75"] & {
+    font-size: round($size * 2.75 / 2) * 1px;
+  }
+  [data-dpr="3"] & {
+    font-size: round($size / 2 * 3) * 1px
+  }
+  // for 三星note4
+  [data-dpr="4"] & {
+    font-size: $size * 2px;
+  }
+}
+
 body {
   color: #fff;
   background: #7f7f7f;
@@ -20,7 +48,7 @@ body {
   background: #666;
 }
 header {
-  padding: 1em;
+  height: calculateRem(100px);
   background: #eee;
   color: #233;
   nav {
