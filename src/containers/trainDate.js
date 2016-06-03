@@ -3,24 +3,14 @@ import React, {
   PropTypes
 } from 'react';
 import Header from '../components/Header'
-import {bindActionCreators} from 'redux';
-import {Link} from 'react-router';
-import {routerActions} from 'react-router-redux';
-
-
 import {connect} from 'react-redux';
 class trainDate extends Component {
-  handleClick () {
-    // const {history}=this.props;
-    // history.goBack();
-  }
-
   render () {
-    // const {history} =this.props;
+    const {router} =this.context;
     return (
       <div>
         <Header  />
-        <h1>123</h1>
+        <h1 onClick={()=>router.push('404')}>123</h1>
       </div>
     );
   }
@@ -28,9 +18,7 @@ class trainDate extends Component {
 
 trainDate.propTypes = {};
 trainDate.defaultProps = {};
-
-export default connect(
-  (state)=>({
-    state:state.items
-  })
-)(trainDate);
+trainDate.contextTypes={
+  router:React.PropTypes.object.isRequired
+};
+export default connect()(trainDate);
