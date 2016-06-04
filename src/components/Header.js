@@ -7,7 +7,6 @@ import {Row, Col, Icon} from 'antd';
 
 class Header extends Component {
   render () {
-    let {history} =this.props;
     return (
       <header>
         <div>
@@ -28,7 +27,6 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  // history:PropTypes.object.isRequired
 };
 Header.defaultProps = {
 };

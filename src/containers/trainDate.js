@@ -4,12 +4,13 @@ import React, {
 } from 'react';
 import Header from '../components/Header'
 import {connect} from 'react-redux';
+
 class trainDate extends Component {
   render () {
-    const {router} =this.context;
+    const { router } =this.context;
     return (
       <div>
-        <Header  />
+        <Header />
         <h1 onClick={()=>router.push('404')}>123</h1>
       </div>
     );
@@ -18,7 +19,7 @@ class trainDate extends Component {
 
 trainDate.propTypes = {};
 trainDate.defaultProps = {};
-trainDate.contextTypes={
-  router:React.PropTypes.object.isRequired
+trainDate.contextTypes = {
+  router: React.PropTypes.object.isRequired
 };
 export default connect()(trainDate);
