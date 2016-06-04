@@ -15,22 +15,24 @@ class TrainStation extends Component {
     super();
     this.state={
       start:'合肥',
-      end:'上海'
+      end:'上海',
+      select:false
     }
     this.handleSelect=this.handleSelect.bind(this);
   }
   handleSelect(){
     this.setState({
       start:this.state.end,
-      end:this.state.start
+      end:this.state.start,
+      select:!this.state.select
     });
   }
   render () {
-    const {start,end} =this.state;
+    const {start,end,select} =this.state;
     return (
       <div className="trainStation">
         <Row type="flex" justify="center" align="middle">
-          <TrainTile title="车次查询"></TrainTile>
+          <TrainTile title="站到站查询"></TrainTile>
           <Col span={23} className='content'>
             <div className="select" >
               <Row type="flex" justify="center" align="middle" >
@@ -45,7 +47,7 @@ class TrainStation extends Component {
                   </div>
                 </Col>
                 <Col span={3}>
-                    <img src={train_trans} alt=""  onTouchTap={this.handleSelect}/>
+                    <img src={train_trans} alt="" className={select?'rotateY':''} onTouchTap={this.handleSelect}/>
                 </Col>
                 <Col span={10}>
                   <small>目的地</small>
