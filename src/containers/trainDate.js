@@ -4,7 +4,6 @@ import React, {
 } from 'react';
 import Header from '../components/Header'
 import {connect} from 'react-redux';
-
 class trainDate extends Component {
   render () {
     const { router } =this.context;
@@ -12,6 +11,7 @@ class trainDate extends Component {
       <div>
         <Header />
         <h1 onClick={()=>router.push('404')}>123</h1>
+        <h2 onTouchTap={()=>alert('touchTap')}>asfasdf</h2>
       </div>
     );
   }

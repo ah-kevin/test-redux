@@ -6,7 +6,12 @@ import configureStore from './stores/configureStore';
 import {browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 import createRoutes from './routes/routes';
-
+var injectTapEventPlugin = require('react-tap-event-plugin');
+injectTapEventPlugin({
+  shouldRejectClick: function (lastTouchEventTimestamp, clickEventTimestamp) {
+    return true;
+  }
+});
 const store = configureStore();
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store, {
@@ -15,7 +20,7 @@ const history = syncHistoryWithStore(browserHistory, store, {
   }
 });
 ReactDOM.render(
-  <Provider store={store} children="">
+  <Provider store={store} children=''>
             {createRoutes(history)}
   </Provider>
   , document.getElementById('app'));
