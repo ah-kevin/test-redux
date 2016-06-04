@@ -1,6 +1,6 @@
-require('styles/App.scss');
 
 import React from 'react';
+require('styles/App.scss');
 
 class AppComponent extends React.Component {
   render() {

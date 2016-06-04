@@ -4,14 +4,17 @@ import React, {
 } from 'react';
 import Header from '../components/Header'
 import {connect} from 'react-redux';
+import SearchTrainNo from '../components/trainDate/SearchTrainNo';
+import TrainStation from '../components/trainDate/TrainStation';
+
 class trainDate extends Component {
   render () {
     const { router } =this.context;
     return (
-      <div>
+      <div className="trainDate">
         <Header />
-        <h1 onClick={()=>router.push('404')}>123</h1>
-        <h2 onTouchTap={()=>alert('touchTap')}>asfasdf</h2>
+        <SearchTrainNo />
+        <TrainStation/>
       </div>
     );
   }

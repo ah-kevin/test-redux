@@ -8,7 +8,8 @@ export default function routes(history){
   return (
     <Router history={history} >
       <Route path="/" component={App}>
-        <IndexRoute component={Index}/>
+        {/*<IndexRoute component={Index}/>*/}
+        <IndexRoute component={TrainDate}/>
         <Route path="trainDate" component={TrainDate}/>
         <Route path="/404" component={NotFound}/>
         <Redirect from="*" to='/404'/>

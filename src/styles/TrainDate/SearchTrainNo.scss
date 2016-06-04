@@ -1,0 +1,102 @@
+.trainDate{
+  .head {
+    display: inherit;
+    height: calculateRem(76px);
+    p {
+      position: absolute;
+      color: #388ad7;
+      margin-left: calculateRem(20px);
+      margin-top: calculateRem(20px);
+      font-weight: bold;
+      @include dpr(26);
+    }
+    img{
+      width: 60%;
+    }
+  }
+  .border-bottom {
+    width: 100%;
+    height: calculateRem(2px);
+    background-color: #d6d6d6;
+    display: inline-block;
+    position: relative;
+    .before {
+      left: 0;
+      width: calculateRem(2px);
+      height: calculateRem(5px);
+      background-color: #d6d6d6;
+      position: absolute;
+      margin-top: -5px;
+    }
+    .after {
+      right: 0;
+      width: calculateRem(2px);
+      height: calculateRem(5px);
+      background-color: #d6d6d6;
+      position: absolute;
+      margin-top: -5px;
+    }
+  }
+  button{
+    display: block;
+    border: none;
+    height:calculateRem(72px);
+    line-height: calculateRem(72px);
+    margin-top: calculateRem(60px);
+    @include dpr(36);
+    width: 100%;
+    font-family: "微软雅黑";
+    letter-spacing: calculateRem(2px);
+    color: #FFF;
+    background-color: #3889D8;
+    border-radius: 3px;
+    text-align: center;
+  }
+  .content{
+    background-color: #ffffff;
+    box-shadow: 2px 1px 0 #d6d6d6;
+    border-radius: calculateRem(10px);
+    padding: 0 calculateRem(20px) calculateRem(42px) calculateRem(16px);
+  }
+}
+.SearchTrainNo {
+  margin-top: calculateRem(40px);
+    .content {
+      input[type='text'] {
+        width: 100%;
+        height: calculateRem(76px);
+        line-height: calculateRem(76px);
+        border: none;
+        display: inline-block;
+        text-align: center;
+        outline: none;
+        -webkit-appearance: none;
+        background-image: none;
+        color: #949698;
+        @include dpr(36);
+        margin-top: calculateRem(23px);
+      }
+    }
+}
+.trainStation{
+  margin-top: calculateRem(50px);
+  .content{
+    text-align: center;
+    .select{
+      padding-top:calculateRem(48px);
+      small{
+        color: #c7c7cc;
+       @include dpr(32);
+        display: block;
+        margin-bottom: calculateRem(28px);
+      }
+      span{
+        color: #333;
+       @include dpr(44);
+        white-space: nowrap;
+        word-break: keep-all;
+        font-weight: bold;
+      }
+    }
+  }
+}

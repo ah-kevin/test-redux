@@ -39,6 +39,7 @@ module.exports = {
       reducers: `${defaultSettings.srcPath}/reducers/`,
       containers: `${defaultSettings.srcPath}/containers/`,
       static: `${defaultSettings.srcPath}/static/`,
+      images: `${defaultSettings.srcPath}/images/`,
       config: `${defaultSettings.srcPath}/config/` + process.env.REACT_WEBPACK_ENV
     }
   },
