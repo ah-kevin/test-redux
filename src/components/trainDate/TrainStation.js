@@ -7,25 +7,56 @@ import React, {
 } from 'react';
 import TrainTile from './tarinTtile';
 import {Row,Col} from 'antd';
-
+let train_trans=require('../../images/train_trans.png');
 import {immutableRenderDecorator} from 'react-immutable-render-mixin';
 @immutableRenderDecorator
 class TrainStation extends Component {
+  constructor (){
+    super();
+    this.state={
+      start:'合肥',
+      end:'上海'
+    }
+    this.handleSelect=this.handleSelect.bind(this);
+  }
+  handleSelect(){
+    this.setState({
+      start:this.state.end,
+      end:this.state.start
+    });
+  }
   render () {
+    const {start,end} =this.state;
     return (
       <div className="trainStation">
         <Row type="flex" justify="center" align="middle">
           <TrainTile title="车次查询"></TrainTile>
           <Col span={23} className='content'>
-            <input type="text"/>
             <div className="select" >
               <Row type="flex" justify="center" align="middle" >
                 <Col span={10}>
                   <small>出发地</small>
-                  <span>合肥</span>
+                  <span>
+                    {start}
+                  </span>
+                  <div className="border-bottom">
+                    <span className="before"></span>
+                    <span className="after"></span>
+                  </div>
                 </Col>
-                <Col span={3}>2</Col>
-                <Col span={10}>2</Col>
+                <Col span={3}>
+                    <img src={train_trans} alt=""  onTouchTap={this.handleSelect}/>
+                </Col>
+                <Col span={10}>
+                  <small>目的地</small>
+                  <span>
+                    {end}
+                  </span>
+                  <div className="border-bottom">
+                    <span className="before"></span>
+                    <span className="after"></span>
+                  </div>
+                </Col>
               </Row>
             </div>
               <button>查询车次</button>
