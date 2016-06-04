@@ -4,6 +4,7 @@ import App from '../containers/App';
 import Index from '../containers/Index';
 import NotFound from '../containers/NotFound';
 import TrainDate from '../containers/trainDate';
+
 export default function routes(history){
   return (
     <Router history={history} >
@@ -17,4 +18,3 @@ export default function routes(history){
     </Router>
   )
 }
-
