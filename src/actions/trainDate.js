@@ -1,7 +1,7 @@
 /**
  * Created by dg_lennon on 16/6/5.
  */
-import  {REVERSE_STATION} from '../constants/tarinDate';
+import  {REVERSE_STATION,CHANGE_TRAIN_NO} from '../constants/tarinDate';
 import {requestDate, receiveData, failData} from './fetch';
 import fetch from 'isomorphic-fetch';
 import {TomorrowDate} from '../utils/util';
@@ -10,6 +10,12 @@ import config from '../config'
 export function reverse_station () {
   return {
     type: REVERSE_STATION
+  }
+}
+export function changeTrainNo (value) {
+  return{
+    type:CHANGE_TRAIN_NO,
+    payload:value
   }
 }
 

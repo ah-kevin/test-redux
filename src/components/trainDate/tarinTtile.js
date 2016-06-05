@@ -6,17 +6,17 @@ import React, {
   PropTypes
 } from 'react';
 import {Col} from 'antd';
-let trainCar =require('../../images/train_car.png');
+let trainCar = require('../../images/train_car.png');
 import {immutableRenderDecorator} from 'react-immutable-render-mixin';
 @immutableRenderDecorator
 class tarinTtile extends Component {
   render () {
     // console.log('title重新渲染了');
     return (
-        <Col span={23} className='head'>
-          <p>{this.props.title}</p>
-          <img src={trainCar} alt=""/>
-        </Col>
+      <Col span={23} className='head'>
+        <p>{this.props.title}</p>
+        <img src={trainCar} alt=""/>
+      </Col>
     );
   }
 }

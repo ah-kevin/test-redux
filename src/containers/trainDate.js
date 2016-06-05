@@ -16,7 +16,7 @@ class trainDate extends Component {
     return (
       <div className="trainDate">
         <Header />
-        <SearchTrainNo gettraindetail={actions.gettraindetail}/>
+        <SearchTrainNo trainDetail={trainDate.get('traindetail')} trainNo={trainDate.get('trainNo')} gettraindetail={actions.gettraindetail} changeTrainNo={actions.changeTrainNo}/>
         <TrainStation selectStation={trainDate.get('selectStation')} actions={actions}/>
       </div>
     );

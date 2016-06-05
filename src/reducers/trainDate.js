@@ -3,9 +3,19 @@
  */
 import immutable from 'immutable';
 import {combineReducers} from 'redux-immutable';
-import {REVERSE_STATION} from '../constants/tarinDate';
+import {REVERSE_STATION,CHANGE_TRAIN_NO} from '../constants/tarinDate';
 import {REQUEST_DATA,RECEIVE_DATA,FAIL_DATA} from '../constants/fetch';
-
+const trainNoState=immutable.fromJS({
+  trainNo:''
+})
+function trainNo(state=trainNoState,action) {
+  switch (action.type){
+    case CHANGE_TRAIN_NO:
+      return  trainNoState.set('trainNo',action.payload)
+    default:
+      return state
+  }
+}
 /**
  * 站到站的起始切换
  * @type {any|*}
@@ -57,5 +67,6 @@ function  traindetail(state=traindetailState,action) {
 
 export default combineReducers({
   selectStation,
+  trainNo,
   traindetail
 });

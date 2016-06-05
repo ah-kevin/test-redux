@@ -1,1 +1,2 @@
 export const REVERSE_STATION = 'REVERSE_STATION';
+export const CHANGE_TRAIN_NO='CHANGE_TRAIN_NO';
