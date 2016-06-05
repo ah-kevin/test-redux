@@ -2,7 +2,7 @@
  * Created by dg_lennon on 16/6/5.
  */
 import immutable from 'immutable';
-import {combineReducers} from 'redux';
+import {combineReducers} from 'redux-immutable';
 import {REVERSE_STATION} from '../constants/tarinDate';
 
 const stationState = immutable.fromJS({
