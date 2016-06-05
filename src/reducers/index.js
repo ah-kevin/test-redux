@@ -4,11 +4,11 @@
 import {combineReducers} from 'redux-immutable';
 import routerReducer from './router-reducer';
 
-import items from './items'
+import trainDate from './trainDate';
 //使用redux的combineReducers方法将所有reducer打包起来
 const rootReducer = combineReducers({
   routing:routerReducer,
-  items
+  trainDate
 });
 
 export default rootReducer
