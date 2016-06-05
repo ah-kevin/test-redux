@@ -20,6 +20,7 @@ class SearchTrainNo extends Component {
     this.setState({ value:e.target.value });
   }
   render () {
+    const {gettraindetail}=this.props;
     return (
       <div className="SearchTrainNo">
         <Row type="flex" justify="center" align="middle">
@@ -29,7 +30,7 @@ class SearchTrainNo extends Component {
             <div className="border-bottom">
               <span className="before"></span>
               <span className="after"></span>
-              <button>查询车次</button>
+              <button onTouchTap={()=>gettraindetail(this.state.value)}>查询车次</button>
             </div>
           </Col>
         </Row>
