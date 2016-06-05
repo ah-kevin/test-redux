@@ -12,12 +12,12 @@ import {bindActionCreators} from 'redux';
 class trainDate extends Component {
   render () {
     const { router } =this.context;
-    const { trainDate } =this.props;
+    const { trainDate,actions } =this.props;
     return (
       <div className="trainDate">
         <Header />
         <SearchTrainNo />
-        <TrainStation selectStation={trainDate.get('selectStation')}/>
+        <TrainStation selectStation={trainDate.get('selectStation')} actions={actions}/>
       </div>
     );
   }

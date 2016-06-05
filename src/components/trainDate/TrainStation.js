@@ -13,22 +13,9 @@ import {immutableRenderDecorator} from 'react-immutable-render-mixin';
 class TrainStation extends Component {
   constructor (){
     super();
-    this.state={
-      start:'合肥',
-      end:'上海',
-      select:false
-    }
-    this.handleSelect=this.handleSelect.bind(this);
-  }
-  handleSelect(){
-    this.setState({
-      start:this.state.end,
-      end:this.state.start,
-      select:!this.state.select
-    });
   }
   render () {
-    const {start,end,select} =this.state;
+    const {selectStation,actions} =this.props;
     return (
       <div className="trainStation">
         <Row type="flex" justify="center" align="middle">
@@ -39,7 +26,7 @@ class TrainStation extends Component {
                 <Col span={10}>
                   <small>出发地</small>
                   <span>
-                    {start}
+                    {selectStation.get('start')}
                   </span>
                   <div className="border-bottom">
                     <span className="before"></span>
@@ -47,12 +34,12 @@ class TrainStation extends Component {
                   </div>
                 </Col>
                 <Col span={3}>
-                    <img src={train_trans} alt="" className={select?'rotateY':''} onTouchTap={this.handleSelect}/>
+                    <img src={train_trans} alt="" className={selectStation.get('isreverse')?'rotateY':''} onTouchTap={actions.reverse_station}/>
                 </Col>
                 <Col span={10}>
                   <small>目的地</small>
                   <span>
-                    {end}
+                    {selectStation.get('end')}
                   </span>
                   <div className="border-bottom">
                     <span className="before"></span>
