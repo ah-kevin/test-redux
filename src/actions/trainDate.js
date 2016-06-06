@@ -3,10 +3,12 @@
  */
 import  {REVERSE_STATION,CHANGE_TRAIN_NO} from '../constants/tarinDate';
 import {requestDate, receiveData, failData} from './fetch';
+import {changeRoute} from './route';
 import fetch from 'isomorphic-fetch';
 import {TomorrowDate} from '../utils/util';
 import config from '../config'
 import {message} from 'antd';
+import {browserHistory} from 'react-router';
 
 export function reverse_station () {
   return {
@@ -48,6 +50,8 @@ export function gettraindetail (trainNo) {
         console.log(res);
         if (res.ret) {
           dispatch(receiveData(res.data))
+          browserHistory.push('/trainDate/detail')
+          dispatch(changeRoute('车次详情'))
         } else {
           dispatch(failData(res.errmsg))
           message.error(res.errmsg,1.5);
@@ -55,7 +59,7 @@ export function gettraindetail (trainNo) {
       })
       .catch(err=>{
         dispatch(failData(err));
-        message.error(res.errmsg,1.5);
+        message.error(err,1.5);
       })
   }
 }

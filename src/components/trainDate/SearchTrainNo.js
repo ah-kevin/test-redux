@@ -18,7 +18,7 @@ class SearchTrainNo extends Component {
     this.props.changeTrainNo(e.target.value);
   }
   render () {
-    const { gettraindetail, trainDetail,trainNo}=this.props;
+    const { gettraindetail,trainNo}=this.props;
     return (
       <div className="SearchTrainNo">
         <Row type="flex" justify="center" align="middle">

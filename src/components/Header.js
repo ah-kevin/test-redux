@@ -16,7 +16,7 @@ class Header extends Component {
                 <Link to='/'>
                   <Icon type="left" className="arrow"/>
                 </Link>
-                <span>列车时刻表</span>
+                <span>{this.props.title}</span>
               </div>
             </Col>
           </Row>

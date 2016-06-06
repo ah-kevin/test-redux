@@ -4,20 +4,19 @@ import React, {
 } from 'react';
 import Header from '../components/Header'
 import {connect} from 'react-redux';
-import SearchTrainNo from '../components/trainDate/SearchTrainNo';
-import TrainStation from '../components/trainDate/TrainStation';
-import * as actions from '../actions/trainDate';
-import {bindActionCreators} from 'redux';
-
+import {changeRoute} from '../actions/route';
 class trainDate extends Component {
+  
+  componentWillMount () {
+    this.props.dispatch(changeRoute('列车时刻表'))
+  }
   render () {
     const { router } =this.context;
-    const { trainDate,actions } =this.props;
+    const {title}=this.props;
     return (
       <div className="trainDate">
-        <Header />
-        <SearchTrainNo trainDetail={trainDate.get('traindetail')} trainNo={trainDate.get('trainNo')} gettraindetail={actions.gettraindetail} changeTrainNo={actions.changeTrainNo}/>
-        <TrainStation selectStation={trainDate.get('selectStation')} actions={actions}/>
+        <Header title={title}/>
+        {this.props.children}
       </div>
     );
   }
@@ -30,9 +29,6 @@ trainDate.contextTypes = {
 };
 export default connect(
   state=>({
-    trainDate: state.get('trainDate')
-  }),
-  dispatch=>({
-    actions: bindActionCreators(actions, dispatch)
+    title:state.getIn(['routing','title'])
   })
 )(trainDate);
