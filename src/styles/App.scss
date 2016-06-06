@@ -30,6 +30,7 @@ $base-font-size: 75px;
 body {
   color: #fff;
   background: #f5f5f5 !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 .index img {
@@ -83,4 +84,5 @@ header {
   }
 }
 @import "TrainDate/SearchTrainNo";
+@import "./TrainDate/trainDetail";
 @import "./message";

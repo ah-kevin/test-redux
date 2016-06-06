@@ -1,0 +1,63 @@
+.trainDetail_head{
+  background-color:#388ad7 ;
+  text-align: center;
+  color: #fff;
+  .start-train,.train-info,.end-train{
+    display: flex;
+    flex-direction: column;
+    p{
+      @include dpr(28);
+      padding-bottom: calculateRem(8px);
+    }
+    span{
+      @include dpr(44);
+      padding: calculateRem(8px) 0;
+      font-weight: bold;
+    }
+    small{
+      @include dpr(28);
+      padding-bottom: calculateRem(6px);
+    }
+  }
+  .train-info{
+      img{
+        width: 100%;
+      }
+    small{
+      padding-top: calculateRem(24px);
+    }
+
+  }
+}
+.trainList{
+  text-align: center;
+  .head{
+    @include dpr(30);
+    color: #505050;
+    border-bottom: 1px solid #E8E8E8;
+    height: calculateRem(70px);
+    .row-flex{
+      height: calculateRem(70px);
+    }
+  }
+  .ant-timeline{
+    padding: 0 calculateRem(20px);
+    text-align: center;
+    .ant-timeline-item{
+      height: calculateRem(70px);
+      line-height: calculateRem(70px);
+    }
+    .ant-timeline-item-tail{
+      left:calculateRem(50px);
+      top:calculateRem(30px)
+    }
+    .ant-timeline-item-head{
+      left:calculateRem(40px);
+      width: calculateRem(20px);
+      height: calculateRem(20px);
+      top:calculateRem(20px);
+    }
+    .row-flex{
+      @include dpr(28)}
+  }
+}
