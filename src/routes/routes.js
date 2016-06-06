@@ -3,9 +3,9 @@ import {Route, Router, Redirect, IndexRoute} from 'react-router';
 import App from '../containers/App';
 import Index from '../containers/Index';
 import NotFound from '../containers/NotFound';
-import TrainDate from '../containers/trainDate';
-import TrainDateHome from '../containers/trainDateHome';
-import TrainDateDetail from '../containers/trainDateDetail';
+import TrainDate from '../containers/trainDate/trainDate';
+import TrainDateHome from '../containers/trainDate/trainDateHome';
+import TrainDateDetail from '../containers/trainDate/trainDateDetail';
 export default function routes (history) {
   return (
     <Router history={history}>

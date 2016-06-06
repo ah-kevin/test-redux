@@ -3,11 +3,11 @@ import React, {
   PropTypes
 } from 'react';
 import {connect} from 'react-redux';
-import SearchTrainNo from '../components/trainDate/SearchTrainNo';
-import TrainStation from '../components/trainDate/TrainStation';
-import * as trainDateActions from '../actions/trainDate';
+import SearchTrainNo from '../../components/trainDate/SearchTrainNo';
+import TrainStation from '../../components/trainDate/TrainStation';
+import * as trainDateActions from '../../actions/trainDate';
 import {bindActionCreators} from 'redux';
-import * as actions from '../actions';
+import * as actions from '../../actions';
 
 import {immutableRenderDecorator} from 'react-immutable-render-mixin';
 @immutableRenderDecorator

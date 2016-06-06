@@ -2,7 +2,7 @@ import React, {
   Component,
   PropTypes
 } from 'react';
-import Header from '../components/Header'
+import Header from '../../components/Header'
 import {connect} from 'react-redux';
 class trainDate extends Component {
 
