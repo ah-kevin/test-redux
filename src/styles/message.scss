@@ -1,0 +1,13 @@
+body .ant-message{
+  //height: 100%;
+  //background-color: rgba(52,52,52,.5);
+  top: calculateRem(400px);
+  .ant-message-notice{
+    .ant-message-custom-content{
+      @include dpr(30);
+      i{
+        @include dpr(30);
+      }
+    }
+  }
+}

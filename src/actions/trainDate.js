@@ -6,6 +6,7 @@ import {requestDate, receiveData, failData} from './fetch';
 import fetch from 'isomorphic-fetch';
 import {TomorrowDate} from '../utils/util';
 import config from '../config'
+import {message} from 'antd';
 
 export function reverse_station () {
   return {
@@ -49,9 +50,13 @@ export function gettraindetail (trainNo) {
           dispatch(receiveData(res.data))
         } else {
           dispatch(failData(res.errmsg))
+          message.error(res.errmsg,1.5);
         }
       })
-      .catch(err=>dispatch(failData(err)))
+      .catch(err=>{
+        dispatch(failData(err));
+        message.error(res.errmsg,1.5);
+      })
   }
 }
 

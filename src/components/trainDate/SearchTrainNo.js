@@ -6,7 +6,7 @@ import React, {
   PropTypes
 } from 'react';
 import {immutableRenderDecorator} from 'react-immutable-render-mixin';
-import {Row, Col} from 'antd';
+import {Row, Col,message} from 'antd';
 import TrainTile from './tarinTtile';
 @immutableRenderDecorator
 class SearchTrainNo extends Component {
@@ -14,11 +14,9 @@ class SearchTrainNo extends Component {
     super();
     this.handleChange = this.handleChange.bind(this);
   }
-
   handleChange (e) {
     this.props.changeTrainNo(e.target.value);
   }
-
   render () {
     const { gettraindetail, trainDetail,trainNo}=this.props;
     return (
@@ -30,7 +28,7 @@ class SearchTrainNo extends Component {
             <div className="border-bottom">
               <span className="before"></span>
               <span className="after"></span>
-              <button onTouchTap={()=>trainNo.get('trainNo') == '' ? alert('车次不能为空') : gettraindetail(trainNo.get('trainNo'))}>
+              <button onTouchTap={()=>trainNo.get('trainNo') == '' ?message.warning('车次不能为空',1.5) : gettraindetail(trainNo.get('trainNo'))}>
                 查询车次
               </button>
             </div>
