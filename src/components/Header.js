@@ -7,15 +7,16 @@ import {Row, Col, Icon} from 'antd';
 
 class Header extends Component {
   render () {
+    const {router} =this.context
     return (
       <header>
         <div>
           <Row type="flex" justify="center" algin="middle">
             <Col span={24} justify="center">
               <div  className="title">
-                <Link to='/'>
+                <a onClick={router.goBack}>
                   <Icon type="left" className="arrow"/>
-                </Link>
+                </a>
                 <span>{this.props.title}</span>
               </div>
             </Col>
@@ -30,5 +31,7 @@ Header.propTypes = {
 };
 Header.defaultProps = {
 };
-
+Header.contextTypes={
+  router: React.PropTypes.object.isRequired
+}
 export default Header;
