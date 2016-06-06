@@ -6,8 +6,13 @@ import {Link} from 'react-router';
 import {Row, Col, Icon} from 'antd';
 
 class Header extends Component {
+  shouldComponentUpdate (nextProps ) {
+    return this.props.title !==nextProps.title
+  }
+
   render () {
     const {router} =this.context
+    // console.log('header重新渲染了');
     return (
       <header>
         <div>

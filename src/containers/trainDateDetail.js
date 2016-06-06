@@ -2,6 +2,8 @@ import React, {
   Component,
   PropTypes
 } from 'react';
+import {connect} from 'react-redux';
+
 import {immutableRenderDecorator} from 'react-immutable-render-mixin';
 @immutableRenderDecorator
 class trainDateDetail extends Component {
@@ -17,4 +19,5 @@ class trainDateDetail extends Component {
 trainDateDetail.propTypes = {};
 trainDateDetail.defaultProps = {};
 
-export default trainDateDetail;
+export default connect(
+)(trainDateDetail);

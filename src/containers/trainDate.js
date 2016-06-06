@@ -4,12 +4,8 @@ import React, {
 } from 'react';
 import Header from '../components/Header'
 import {connect} from 'react-redux';
-import {changeRoute} from '../actions/route';
 class trainDate extends Component {
-  
-  componentWillMount () {
-    this.props.dispatch(changeRoute('列车时刻表'))
-  }
+
   render () {
     const { router } =this.context;
     const {title}=this.props;
