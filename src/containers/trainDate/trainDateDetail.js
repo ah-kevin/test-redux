@@ -12,18 +12,10 @@ import immutable from 'immutable';
 @immutableRenderDecorator
 class trainDateDetail extends Component {
   render () {
-    const { extInfo, head, value } =this.props;
-    const headeValue=immutable.fromJS({
-      start:value.getIn([0,1]),
-      end:value.getIn([-1,1]),
-      startTime:value.getIn([0,4]),
-      endTime:value.getIn([-1,4]),
-      totalTime:extInfo.get('totalTime')
-    })
-    console.log(headeValue.toJS());
+    const {header,trainNo} =this.props
     return (
       <div>
-          <Header extInfo={extInfo} />
+          <Header  state={header}  trainNo={trainNo}/>
           <TrainList/>
       </div>
     );
@@ -35,8 +27,7 @@ trainDateDetail.defaultProps = {};
 
 export default connect(
   state=>({
-    extInfo: state.getIn([ 'trainDate', 'traindetail', 'data', 'extInfo' ]),
-    head: state.getIn([ 'trainDate', 'traindetail', 'data', 'info', 'head' ]),
-    value: state.getIn([ 'trainDate', 'traindetail', 'data', 'info', 'value' ])
+    header: state.getIn([ 'trainDate', 'traindetail', 'data', 'header']),
+    trainNo:state.getIn(['trainDate','trainNo','trainNo'])
   })
 )(trainDateDetail);

@@ -9,6 +9,7 @@ import {TomorrowDate} from '../utils/util';
 import config from '../config'
 import {message} from 'antd';
 import {browserHistory} from 'react-router';
+import immutable from 'immutable';
 
 export function reverse_station () {
   return {
@@ -48,7 +49,7 @@ export function gettraindetail (trainNo) {
       })
       .then(res=> {
         if (res.ret) {
-          dispatch(receiveData(res.data))
+          dispatch(receiveData(immutable.fromJS(res.data)))
           browserHistory.push('/trainDate/detail')
           dispatch(changeRoute('车次详情'))
         } else {
