@@ -41,69 +41,43 @@
       height: calculateRem(70px);
     }
   }
-  .ant-timeline {
-    padding: 0 calculateRem(20px);
-    text-align: center;
-    .ant-timeline-item {
-      height: calculateRem(70px);
-      line-height: calculateRem(70px);
-      .out{
-        display: inline-block;
-        font-style: normal;
-        vertical-align: baseline;
-        text-align: center;
-        text-transform: none;
-        text-rendering: auto;
-        line-height: 1;
-        width: calculateRem(32px);
-        height: calculateRem(32px);
-        left: calculateRem(40px);
-        top: calculateRem(20px);
-        border: 2px solid #87d068;
-        border-radius: 100px;
-        color: #fff;
-        div{
-          @include dpr(20);
-          line-height: calculateRem(30px);
+  .item{
+    .line {
+      left: calculateRem(30px);
+      top: calculateRem(30px);
+      border-left: calculateRem(4px) solid #e9e9e9;
+      position: absolute;
+      height: 100%;
+      z-index: -1;
+    }
+    .row-flex{
+      div{
+        @include dpr(28);
+        padding: calculateRem(10px) 0;
+      }
+      .out {
+        .in{
+          margin: 0 auto;
+          width: calculateRem(44px);
+          height: calculateRem(44px);
+          border-radius: calculateRem(20px);
+          padding: calculateRem(0px);
+          display: inline-block;
+          border-radius: 100%;
+          color: #ffffff;
+          text-align: center;
         }
       }
-
     }
-    .ant-timeline-item-head-custom{
-      padding: 0;
-
-    }
-    .ant-timeline-item-tail {
-      left: calculateRem(55px);
-      top: calculateRem(30px);
-      border-left:calculateRem(4px) solid #e9e9e9;
-
-    }
-    .ant-timeline-item-head-green{
-      border-color: #87d068;
-      color: #87d068;
-    }
-    .ant-timeline-item-head {
-      left: calculateRem(40px);
-      width: calculateRem(30px);
-      height: calculateRem(30px);
-      top: calculateRem(20px);
-      border-radius: 100px;
-      i {
-        @include dpr(28);
-        border-color: #87d068;
-        background-color: inherit;
-        border-radius: 100px;
-      }
-
-    }
-    .row-flex {
-      @include dpr(28)
-    }
-    .ant-timeline-item:last-child{
-      .ant-timeline-item-tail{
+    .row-flex:last-child{
+      .line{
         border: none;
       }
     }
+
   }
+  .row-flex {
+    @include dpr(28)
+  }
+
 }
