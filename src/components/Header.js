@@ -12,7 +12,6 @@ class Header extends Component {
 
   render () {
     const {router} =this.context
-    // console.log('header重新渲染了');
     return (
       <header>
         <div>
