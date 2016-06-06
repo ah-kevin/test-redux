@@ -48,7 +48,8 @@ const traindetailState = immutable.fromJS({
       startTime: '',
       endTime: '',
       totalTime: ''
-    }
+    },
+    items:{}
   },
   error: ''
 })
@@ -65,7 +66,6 @@ function traindetail (state = traindetailState, action) {
     case RECEIVE_DATA:
       return immutable.fromJS({
         isFetching: false,
-        data: action.payload,
         data: {
           header: {
             start: action.payload.getIn([ 'info', 'value' ]).getIn([ 0, 1 ]),
@@ -73,7 +73,8 @@ function traindetail (state = traindetailState, action) {
             startTime: action.payload.getIn([ 'info', 'value' ]).getIn([ 0, 4 ]),
             endTime: action.payload.getIn([ 'info', 'value' ]).getIn([ -1, 4 ]),
             totalTime: action.payload.getIn([ 'extInfo', 'totalTime' ])
-          }
+          },
+          items:action.payload.getIn(['info','value']).map((item,index)=>immutable.fromJS([item.get(1),item.get(3),item.get(4),item.get(5)]))
         },
         error: ''
       })

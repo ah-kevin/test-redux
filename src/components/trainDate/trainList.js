@@ -24,8 +24,7 @@ class trainList extends Component {
             <Col span={1}/>
           </Row>
         </div>
-
-        <Item/>
+        <Item items={this.props.items}/>
       </div>
     );
   }

@@ -11,33 +11,21 @@ import {immutableRenderDecorator} from 'react-immutable-render-mixin';
 @immutableRenderDecorator
 class trainItem extends Component {
   render () {
+    const {items} =this.props;
+    let TimelineNodes=items.map((item,index)=>
+      <Timeline.Item>
+        <Row type="flex" justify="center" align="midlle">
+          <Col span={7}>{item.get(0)}</Col>
+           <Col span={5}>{item.get(1)}</Col>
+           <Col span={7}>{item.get(2)}</Col>
+          <Col span={5}>{item.get(3)}</Col>
+        </Row>
+      </Timeline.Item>
+    )
     return (
       <div>
         <Timeline>
-          <Timeline.Item>
-            <Row type="flex" justify="center" align="midlle">
-              <Col span={7}>北京</Col>
-              <Col span={5}>起点站</Col>
-              <Col span={7}>23:20</Col>
-              <Col span={5}>19分支</Col>
-            </Row>
-          </Timeline.Item>
-          <Timeline.Item>
-            <Row type="flex" justify="center" align="midlle">
-              <Col span={7}>北京</Col>
-              <Col span={5}>起点站</Col>
-              <Col span={7}>23:20</Col>
-              <Col span={5}>19分支</Col>
-            </Row>
-          </Timeline.Item>
-          <Timeline.Item>
-            <Row type="flex" justify="center" align="midlle">
-              <Col span={7}>北京</Col>
-              <Col span={5}>起点站</Col>
-              <Col span={7}>23:20</Col>
-              <Col span={5}>19分支</Col>
-            </Row>
-          </Timeline.Item>
+          {TimelineNodes}
         </Timeline>
       </div>
     );

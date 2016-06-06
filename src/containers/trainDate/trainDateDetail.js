@@ -6,17 +6,15 @@ import {connect} from 'react-redux';
 import {immutableRenderDecorator} from 'react-immutable-render-mixin';
 import Header from '../../components/trainDate/trainDetailHead';
 import TrainList from '../../components/trainDate/trainList';
-import immutable from 'immutable';
-
 
 @immutableRenderDecorator
 class trainDateDetail extends Component {
   render () {
-    const {header,trainNo} =this.props
+    const {header,trainNo,items} =this.props
     return (
       <div>
           <Header  state={header}  trainNo={trainNo}/>
-          <TrainList/>
+          <TrainList items={items}/>
       </div>
     );
   }
@@ -28,6 +26,7 @@ trainDateDetail.defaultProps = {};
 export default connect(
   state=>({
     header: state.getIn([ 'trainDate', 'traindetail', 'data', 'header']),
-    trainNo:state.getIn(['trainDate','trainNo','trainNo'])
+    trainNo:state.getIn(['trainDate','trainNo','trainNo']),
+    items:state.getIn([ 'trainDate', 'traindetail', 'data', 'items'])
   })
 )(trainDateDetail);
