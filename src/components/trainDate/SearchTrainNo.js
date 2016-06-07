@@ -32,7 +32,7 @@ class SearchTrainNo extends Component {
   }
 
   render () {
-    const {trainNo }=this.props;
+    const { trainNo }=this.props;
     return (
       <div className="SearchTrainNo">
         <Row type="flex" justify="center" align="middle">

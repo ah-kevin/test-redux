@@ -28,7 +28,6 @@ class trainItem extends Component {
     let itemslength = items.size;
     let startIndex = this.findIndexOfKey(items, start);
     let endIndex = this.findIndexOfKey(items, end);
-    console.log(itemslength, startIndex, endIndex);
     let TimelineNodes = items.map((item, index)=>
       <Row type='flex' justify='center' align='middle' key={index}
            className={startIndex == 0 || startIndex <= index ? endIndex == 0 || index <= endIndex ? '' : 'pass' : 'pass'}>
