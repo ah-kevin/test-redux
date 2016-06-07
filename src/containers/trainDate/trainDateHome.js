@@ -15,6 +15,7 @@ class trainDateHome extends Component {
   componentWillMount () {
     // console.log('home 渲染了');
     this.props.actions.changeRoute('列车时刻表');
+    this.props.trainDateActions.changeTrainNo('');
   }
 
   render () {

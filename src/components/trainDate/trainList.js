@@ -23,7 +23,7 @@ class trainList extends Component {
             <Col span={5}>停留</Col>
           </Row>
         </div>
-        <Item items={this.props.items}/>
+        <Item items={this.props.items} start={this.props.start} end={this.props.end}/>
       </div>
     );
   }

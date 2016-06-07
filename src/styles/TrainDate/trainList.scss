@@ -1,7 +1,7 @@
 .trainList{
   padding: 0 calculateRem(20px);
  .list{
-   height: calculateRem(150px);
+   padding: calculateRem(20px) 0;
    div{
      display: flex;
      flex-direction: column;
@@ -21,7 +21,7 @@
      }
    }
 
-   border-bottom: 2px solid #ededed;
+   border-bottom: 2px solid #b9b9b9;
 
  }
 }

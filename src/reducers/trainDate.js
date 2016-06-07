@@ -5,7 +5,7 @@ import immutable from 'immutable';
 import {combineReducers} from 'redux-immutable';
 import {REVERSE_STATION, CHANGE_TRAIN_NO, RECEIVE_DATA, REQUEST_DATA, FAIL_DATA,REQUEST_LIST,RECEIVE_LIST,FAIL_LIST} from '../constants/tarinDate';
 const trainNoState = immutable.fromJS({
-  trainNo: 'k101'
+  trainNo: ''
 })
 function trainNo (state = trainNoState, action) {
   switch (action.type) {
@@ -21,7 +21,7 @@ function trainNo (state = trainNoState, action) {
  */
 const stationState = immutable.fromJS({
   start: '合肥',
-  end: '上海',
+  end: '南京',
   isreverse: false
 });
 function selectStation (state = stationState, action) {
