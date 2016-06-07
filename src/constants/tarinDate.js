@@ -1,5 +1,7 @@
 export const REVERSE_STATION = 'REVERSE_STATION';
 export const CHANGE_TRAIN_NO = 'CHANGE_TRAIN_NO';
+export const EDIT_STATION='EDIT_STATION';
+export const CLEAR_STATION='CLEAR_STATION';
 /**
  * 车次详情列表
  * @type {string}

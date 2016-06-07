@@ -1,8 +1,8 @@
 /**
  * Created by dg_lennon on 16/6/5.
  */
-import  {REVERSE_STATION, CHANGE_TRAIN_NO} from '../constants/tarinDate';
-import {requestDate, receiveData, failData,failList,receiveList,requestList} from './fetch-train';
+import  {REVERSE_STATION, CHANGE_TRAIN_NO,EDIT_STATION,CLEAR_STATION} from '../constants/tarinDate';
+import {requestDate, receiveData,failData,failList,receiveList,requestList} from './fetch-train';
 import {changeRoute} from './index';
 import fetch from 'isomorphic-fetch';
 import {TomorrowDate} from '../utils/util';
@@ -16,7 +16,16 @@ export function reverse_station () {
     type: REVERSE_STATION
   }
 }
-
+export function edit_station () {
+  return {
+    type:EDIT_STATION
+  }
+}
+export function clear_station () {
+  return {
+    type:CLEAR_STATION
+  }
+}
 export function changeTrainNo (value) {
   return {
     type: CHANGE_TRAIN_NO,

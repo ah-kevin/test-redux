@@ -23,8 +23,8 @@ class trainList extends Component {
     const {data,actions} =this.props;
     let trainList = data.map((item, index)=>
     <Row type="flex" justify="center" align="middle" className="list" key={index} onTouchTap={()=>{
-      actions.gettraindetail(item.get('trainNo'))
-      actions.changeTrainNo(item.get('trainNo'))
+      actions.gettraindetail(item.get('trainNo'));
+      actions.changeTrainNo(item.get('trainNo'));
     }
       }>
         <Col span="5">

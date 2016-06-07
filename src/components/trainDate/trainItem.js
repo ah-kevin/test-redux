@@ -30,16 +30,16 @@ class trainItem extends Component {
     let endIndex = this.findIndexOfKey(items, end);
     console.log(itemslength, startIndex, endIndex);
     let TimelineNodes = items.map((item, index)=>
-      <Row type="flex" justify="center" align="middle" key={index}
+      <Row type='flex' justify='center' align='middle' key={index}
            className={startIndex == 0 || startIndex <= index ? endIndex == 0 || index <= endIndex ? '' : 'pass' : 'pass'}>
         <Col span={2}>
              {
                index == startIndex ?
-                 <Font value={startIndex !== 0 ? "过" : "终" && startIndex == 0 ? '始' : '终'}
-                       color={startIndex !== 0 ? "#48c965" : "#39b3e6" && startIndex == 0 ? '#f9aa05' : '#48c965'}/> :
+                 <Font value={startIndex !== 0 ? '过' : '终' && startIndex == 0 ? '始' : '终'}
+                       color={startIndex !== 0 ? '#48c965' : '#39b3e6' && startIndex == 0 ? '#f9aa05' : '#48c965'}/> :
                  <Font
-                   value={index == endIndex ? (endIndex == itemslength - 1 ? "终" : "过") : (index == itemslength - 1 ? (endIndex == 0 ? '终' : '') : '')}
-                   color={index == endIndex ? (endIndex == itemslength - 1 ? "#39b3e6" : "#48c965") : (index == itemslength - 1 ? (endIndex == 0 ? '#39b3e6' : '#48c965') : '#48c965')}/>
+                   value={index == endIndex ? (endIndex == itemslength - 1 ? '终' : '过') : (index == itemslength - 1 ? (endIndex == 0 ? '终' : '') : '')}
+                   color={index == endIndex ? (endIndex == itemslength - 1 ? '#39b3e6' : '#48c965') : (index == itemslength - 1 ? (endIndex == 0 ? '#39b3e6' : '#48c965') : '#48c965')}/>
              }
         </Col>
         <Col span={5}>{item.get(0)}</Col>
@@ -49,7 +49,7 @@ class trainItem extends Component {
       </Row>
     )
     return (
-      <div className="item">
+      <div className='item'>
            {TimelineNodes}
       </div>
     );

@@ -16,13 +16,18 @@ class trainDateHome extends Component {
     // console.log('home 渲染了');
     this.props.actions.changeRoute('列车时刻表');
     this.props.trainDateActions.changeTrainNo('');
+    this.props.trainDateActions.edit_station();
   }
-
   render () {
     const { trainDate,trainDateActions } =this.props;
     return (
       <div>
-        <SearchTrainNo trainDetail={trainDate.get('traindetail')} trainNo={trainDate.get('trainNo')} gettraindetail={trainDateActions.gettraindetail} changeTrainNo={trainDateActions.changeTrainNo}/>
+        <SearchTrainNo trainDetail={trainDate.get('traindetail')}
+                       trainNo={trainDate.get('trainNo')}
+                       gettraindetail={trainDateActions.gettraindetail}
+                       changeTrainNo={trainDateActions.changeTrainNo}
+                       clearStation={trainDateActions.clear_station}
+        />
         <TrainStation selectStation={trainDate.get('selectStation')} actions={trainDateActions}/>
       </div>
     );
