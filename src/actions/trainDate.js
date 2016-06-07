@@ -16,6 +16,7 @@ export function reverse_station () {
     type: REVERSE_STATION
   }
 }
+
 export function changeTrainNo (value) {
   return {
     type: CHANGE_TRAIN_NO,

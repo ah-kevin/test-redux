@@ -21,7 +21,7 @@ function trainNo (state = trainNoState, action) {
  */
 const stationState = immutable.fromJS({
   start: '合肥',
-  end: '南京',
+  end: '上海',
   isreverse: false
 });
 function selectStation (state = stationState, action) {
