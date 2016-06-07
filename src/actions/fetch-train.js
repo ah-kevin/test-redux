@@ -1,4 +1,4 @@
-import {FAIL_DATA, RECEIVE_DATA, REQUEST_DATA} from '../constants/tarinDate';
+import {FAIL_DATA, RECEIVE_DATA, REQUEST_DATA,RECEIVE_LIST,REQUEST_LIST,FAIL_LIST} from '../constants/tarinDate';
 
 export function requestDate () {
   return {
@@ -18,3 +18,22 @@ export function receiveData (data) {
     payload: data
   }
 }
+export function requestList () {
+  return {
+    type: REQUEST_LIST
+  }
+}
+export function failList (err) {
+  return {
+    type: FAIL_LIST,
+    payload: err,
+    error: true
+  }
+}
+export function receiveList (data) {
+  return {
+    type: RECEIVE_LIST,
+    payload: data
+  }
+}
+

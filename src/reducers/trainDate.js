@@ -3,7 +3,7 @@
  */
 import immutable from 'immutable';
 import {combineReducers} from 'redux-immutable';
-import {REVERSE_STATION, CHANGE_TRAIN_NO,RECEIVE_DATA,REQUEST_DATA,FAIL_DATA} from '../constants/tarinDate';
+import {REVERSE_STATION, CHANGE_TRAIN_NO, RECEIVE_DATA, REQUEST_DATA, FAIL_DATA,REQUEST_LIST,RECEIVE_LIST,FAIL_LIST} from '../constants/tarinDate';
 const trainNoState = immutable.fromJS({
   trainNo: 'k101'
 })
@@ -48,7 +48,7 @@ const traindetailState = immutable.fromJS({
       endTime: '',
       totalTime: ''
     },
-    items:{}
+    items: {}
   },
   error: ''
 })
@@ -73,7 +73,7 @@ function traindetail (state = traindetailState, action) {
             endTime: action.payload.getIn([ 'info', 'value' ]).getIn([ -1, 4 ]),
             totalTime: action.payload.getIn([ 'extInfo', 'totalTime' ])
           },
-          items:action.payload.getIn(['info','value']).map((item,index)=>immutable.fromJS([item.get(1),item.get(3),item.get(4),item.get(5)]))
+          items: action.payload.getIn([ 'info', 'value' ]).map((item, index)=>immutable.fromJS([ item.get(1), item.get(3), item.get(4), item.get(5) ]))
         },
         error: ''
       })
@@ -82,8 +82,37 @@ function traindetail (state = traindetailState, action) {
   }
 }
 
+//站到站车次列表
+const trainListState = immutable.fromJS({
+  isFetching: false,
+  error:'',
+  data:[]
+});
+function trainList (state = trainListState, action) {
+  switch (action.type) {
+    case REQUEST_LIST:
+      return state.set('isFetching',true);
+    case FAIL_LIST:
+      return immutable.fromJS({
+        isFetching:false,
+        error:action.payload,
+        data:[]
+      });
+    case RECEIVE_LIST:
+      return immutable.fromJS({
+        isFetching:false,
+        error:'',
+        data:action.payload.get('trainList')
+      })
+    default:
+      return state;
+  }
+
+}
+
 export default combineReducers({
   selectStation,
   trainNo,
-  traindetail
+  traindetail,
+  trainList
 });

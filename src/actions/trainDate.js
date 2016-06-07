@@ -2,7 +2,7 @@
  * Created by dg_lennon on 16/6/5.
  */
 import  {REVERSE_STATION, CHANGE_TRAIN_NO} from '../constants/tarinDate';
-import {requestDate, receiveData, failData} from './fetch-train';
+import {requestDate, receiveData, failData,failList,receiveList,requestList} from './fetch-train';
 import {changeRoute} from './index';
 import fetch from 'isomorphic-fetch';
 import {TomorrowDate} from '../utils/util';
@@ -74,7 +74,7 @@ export function s2ssearch (from,to) {
     if(isFetch){
       return
     }
-    dispatch(requestDate());
+    dispatch(requestList());
     return fetch(`${config.qunaer}/s2ssearch?version=${config.version}&from=${from}&to=${to}&date=${TomorrowDate}`,{
       method:'get',
       headers:{
@@ -89,8 +89,17 @@ export function s2ssearch (from,to) {
       })
       .then(res=>{
         if(res.ret){
-          dispatch()
+          dispatch(receiveList(immutable.fromJS(res.data)))
+          dispatch(changeRoute(`${from}->${to}`));
+          browserHistory.push('/trainDate/list')
+        }else{
+          dispatch(failList(res.errmsg))
+          message.error(res.errmsg,1.5);
         }
+      })
+      .catch(err=>{
+        dispatch(failList(err));
+        message.error(err,1.5);
       })
   }
 }
