@@ -1,2 +1,5 @@
 export const REVERSE_STATION = 'REVERSE_STATION';
 export const CHANGE_TRAIN_NO='CHANGE_TRAIN_NO';
+export const REQUEST_DATA = 'REQUEST_DATA';
+export const RECEIVE_DATA = 'RECEIVE_DATA';
+export const FAIL_DATA = 'FAIL_DATA';

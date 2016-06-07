@@ -1,4 +1,4 @@
-import {FAIL_DATA, RECEIVE_DATA, REQUEST_DATA} from '../constants/fetch';
+import {FAIL_DATA, RECEIVE_DATA, REQUEST_DATA} from '../constants/tarinDate';
 
 export function requestDate () {
   return {

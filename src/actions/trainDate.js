@@ -2,7 +2,7 @@
  * Created by dg_lennon on 16/6/5.
  */
 import  {REVERSE_STATION, CHANGE_TRAIN_NO} from '../constants/tarinDate';
-import {requestDate, receiveData, failData} from './fetch';
+import {requestDate, receiveData, failData} from './fetch-train';
 import {changeRoute} from './index';
 import fetch from 'isomorphic-fetch';
 import {TomorrowDate} from '../utils/util';
@@ -64,4 +64,33 @@ export function gettraindetail (trainNo) {
   }
 }
 
-
+/**
+ *  站到站查询
+ *
+ */
+export function s2ssearch (from,to) {
+  return (dispatch,getState)=>{
+    const isFetch=getState().get('isFetching')
+    if(isFetch){
+      return
+    }
+    dispatch(requestDate());
+    return fetch(`${config.qunaer}/s2ssearch?version=${config.version}&from=${from}&to=${to}&date=${TomorrowDate}`,{
+      method:'get',
+      headers:{
+        'apiKey':config.apikey
+      }
+    })
+      .then(res=>{
+        if(res.ok){
+          return res.json()
+        }
+        message.error('请求失败',1.5)
+      })
+      .then(res=>{
+        if(res.ret){
+          dispatch()
+        }
+      })
+  }
+}

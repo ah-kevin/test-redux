@@ -3,8 +3,7 @@
  */
 import immutable from 'immutable';
 import {combineReducers} from 'redux-immutable';
-import {REVERSE_STATION, CHANGE_TRAIN_NO} from '../constants/tarinDate';
-import {REQUEST_DATA, RECEIVE_DATA, FAIL_DATA} from '../constants/fetch';
+import {REVERSE_STATION, CHANGE_TRAIN_NO,RECEIVE_DATA,REQUEST_DATA,FAIL_DATA} from '../constants/tarinDate';
 const trainNoState = immutable.fromJS({
   trainNo: 'k101'
 })

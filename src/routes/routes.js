@@ -6,6 +6,8 @@ import NotFound from '../containers/NotFound';
 import TrainDate from '../containers/trainDate/trainDate';
 import TrainDateHome from '../containers/trainDate/trainDateHome';
 import TrainDateDetail from '../containers/trainDate/trainDateDetail';
+import TrainList from '../containers/trainDate/trainList';
+
 export default function routes (history) {
   return (
     <Router history={history}>
@@ -14,6 +16,7 @@ export default function routes (history) {
         <Route path="trainDate" component={TrainDate} >
           <IndexRoute component={TrainDateHome}/>
           <Route path="detail" component={TrainDateDetail} />
+          <Route path="list" component={TrainList} />
         </Route>
         <Route path="/404" component={NotFound}/>
         <Redirect from="*" to='/404'/>
