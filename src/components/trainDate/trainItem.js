@@ -6,7 +6,7 @@ import React, {
   PropTypes
 } from 'react';
 import {Row,Col,Icon} from 'antd';
-import EndFont from './endFont';
+import Font from './Font';
 
 import {immutableRenderDecorator} from 'react-immutable-render-mixin';
 @immutableRenderDecorator
@@ -17,8 +17,8 @@ class trainItem extends Component {
     let TimelineNodes=items.map((item,index)=>
         <Row type="flex" justify="center" align="middle" key={index} >
           <Col span={2}>
-           {index==0?<EndFont value="始" color="#f9aa05"/>:<EndFont value="" color="#97e0a1"/>&&
-            index==itemslength-1?<EndFont value="终" color="#39b3e6"/>:<EndFont value=""  color="#97e0a1"/>}
+           {index==0?<Font value="始" color="#f9aa05"/>:<Font value="" color="#97e0a1"/>&&
+            index==itemslength-1?<Font value="终" color="#39b3e6"/>:<Font value=""  color="#97e0a1"/>}
           </Col>
           <Col span={5}>{item.get(0)}</Col>
            <Col span={5}>{item.get(1)}</Col>

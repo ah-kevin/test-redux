@@ -6,7 +6,7 @@ import {combineReducers} from 'redux-immutable';
 import {REVERSE_STATION, CHANGE_TRAIN_NO} from '../constants/tarinDate';
 import {REQUEST_DATA, RECEIVE_DATA, FAIL_DATA} from '../constants/fetch';
 const trainNoState = immutable.fromJS({
-  trainNo: ''
+  trainNo: 'k101'
 })
 function trainNo (state = trainNoState, action) {
   switch (action.type) {

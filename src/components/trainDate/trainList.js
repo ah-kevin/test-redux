@@ -18,10 +18,9 @@ class trainList extends Component {
           <Row type="flex" justify="center" align="middle">
             <Col span={2}/>
             <Col span={5}>站名</Col>
-            <Col span={6}>到达时间</Col>
-            <Col span={6}>开车时间</Col>
-            <Col span={4}>停留</Col>
-            <Col span={1}/>
+            <Col span={5}>到达时间</Col>
+            <Col span={5}>开车时间</Col>
+            <Col span={5}>停留</Col>
           </Row>
         </div>
         <Item items={this.props.items}/>
