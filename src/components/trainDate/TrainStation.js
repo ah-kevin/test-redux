@@ -48,7 +48,7 @@ class TrainStation extends Component {
                 </Col>
               </Row>
             </div>
-              <button onTouchTap={actions.s2ssearch(selectStation.get('start'),selectStation.get('end'))}>查询车次</button>
+              <button onTouchTap={()=>actions.s2ssearch(selectStation.get('start'),selectStation.get('end'))}>查询车次</button>
           </Col>
         </Row>
       </div>
